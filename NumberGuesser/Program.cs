@@ -39,7 +39,7 @@ namespace NumberGuesser
         {
           currentNumber = currentNumber + increment; ;
         }
-        else if (i == 6)
+        if (i == 6)
         {
           Console.WriteLine(" ");
           Console.WriteLine($"That was attempt #{attempts}.");
