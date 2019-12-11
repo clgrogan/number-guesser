@@ -4,12 +4,13 @@ namespace NumberGuesser
 {
   class Program
   {
+    // PlayGame executes when the player selects the option to play the game by responding to the question "OK?" with a 'y'.
     static void PlayGame()
     {
-      string response = "";
-      int attempts = 1;
-      int currentNumber = 50;
-      int[] incrementBy = new int[] { 25, 12, 6, 3, 1, 1 };
+      string response = ""; // String to store the user's response value entered via console.
+      int attempts = 1; // Number of guesses the application has offered.
+      int currentNumber = 50; // Number to guess, initialized at 1/2 the max.
+      int increment = 25; // number to add or subtract if the player's number wasn't guessed.
       for (int i = 0; i < 8; i++)
       {
         Console.WriteLine(" ");
@@ -32,11 +33,11 @@ namespace NumberGuesser
         }
         else if (response == "l")
         {
-          currentNumber = currentNumber - incrementBy[i];
+          currentNumber = currentNumber - increment; ;
         }
         else if (response == "h")
         {
-          currentNumber = currentNumber + incrementBy[i];
+          currentNumber = currentNumber + increment; ;
         }
         else if (i == 6)
         {
@@ -49,7 +50,9 @@ namespace NumberGuesser
           Console.WriteLine(" ");
         }
 
+        // Add one to attempts by one. Set the incrementation value for the next round
         attempts++;
+        increment = increment / 2;
       }
     }
     static void Main(string[] args)
