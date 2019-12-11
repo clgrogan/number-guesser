@@ -16,7 +16,7 @@ namespace NumberGuesser
         Console.WriteLine(" ");
         Console.WriteLine($"This is attempt #{attempts}.");
         Console.WriteLine(" ");
-        Console.WriteLine($"Is your number {currentNumber}.");
+        Console.WriteLine($"Is your number {currentNumber}?");
         Console.WriteLine(" ");
         Console.WriteLine("  Type 'y' for yes.");
         Console.WriteLine("  Type 'l' for lower.");
@@ -25,7 +25,7 @@ namespace NumberGuesser
         if (response == "y")
         {
           Console.WriteLine(" ");
-          Console.WriteLine($"We guessed your number in {attempts} attempts.");
+          Console.WriteLine($"I guessed your number in {attempts} attempts.");
           Console.WriteLine(" ");
           Console.WriteLine("Thank you for playing!");
           Console.WriteLine(" ");
@@ -66,19 +66,24 @@ namespace NumberGuesser
       Console.WriteLine(" ");
       Console.WriteLine("I will be able to guess in 7 tries or less.");
       Console.WriteLine(" ");
-      Console.WriteLine("OK? Type 'y' for 'yes' .");
+      Console.WriteLine("Would you like to play?");
+      Console.WriteLine(" ");
+      Console.WriteLine("  Hit Enter/Return to play!");
+      Console.WriteLine(" ");
+      Console.WriteLine("  Type 'exit' and hit Enter/Return to leave");
+      Console.WriteLine(" ");
 
       // Get user's initial response
       response = Console.ReadLine();
 
       // If user entered 'y' continue the game, otherwise say 'bye' and exit application.
-      if (response == "y")
+      if (response != "exit")
       {
         PlayGame();
       }
       else
       {
-        Console.WriteLine("Your response was '" + response + "' not 'y'. So bye, Felecia!");
+        Console.WriteLine("Your response was, '" + response + ", so bye, Felecia!");
       }
       Console.WriteLine("!!!!!EXITING GAME!!!!!");
     }
